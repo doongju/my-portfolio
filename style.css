@@ -1,0 +1,338 @@
+/* 공통 리셋 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+ul, li { list-style: none; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+body { 
+    font-family: "Noto Sans KR",sans-serif; 
+    color: #2b3440; 
+    line-height: 1.6; 
+    background-color: rgb(248, 244, 237);
+}
+
+/* 
+버튼 .btn으로 마우스가 닿으면 마우스 모양이 바뀌게 cursor을 썼고 hover을 써서 색도 변경이 되게 하였고
+헤더쪽은 flex를 쓰고 space-between을 써서 로고랑 검색창 로그인/회원가입을 왼쪽 가운데 오른쪽으로 나눴고
+로고에서는 볼링을 span으로 묶어 색을 다르게 적용하였다
+*/
+.btn{
+    border: none;
+    background-color: #6e6666;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:16px 24px ;
+    border-bottom: 1px solid #723535;
+}
+
+.logo{
+    font-size: 25px;
+    font-weight: 900;
+    color: #394e27;
+}
+.logo>span{
+    color: black;
+}
+
+.search{
+    flex: 1;
+    max-width: 450px;
+    height: 40px;
+    display: flex;
+}
+.search>input{
+    flex:1;
+    border: 1px solid #2c1e1e;
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+    padding: 0 12px;
+    font-size: 14px;
+}
+.search input:focus{
+    border-color: #36364d;
+}
+
+.search button{
+    width: 40px;
+    border-radius: 0 20px 20px 0;
+}
+.search button:hover{
+    background-color: #5a5a66;
+}
+
+.header-util{
+    display: flex;
+    gap:12px;
+
+}
+.header-util a:hover{
+    color: #a9a9b3;
+}
+/* 폭 가두기 + 가운데 정렬 */
+.wrapper { 
+    width: 100%; 
+    max-width: 960px; 
+    margin: 0 auto; 
+    padding: 24px; 
+}
+/* 최대 폭을 지정해두어 그 이상 늘어나지 않게 했다 */
+
+
+/* ------------------------------메뉴 부분---------------------------------- */
+/*
+    메뉴에서 ul에 flex를 쓰고 폭을 지정해두었고
+    li는 부모로 지정해주고 서브메뉴에 자식을 지정하고
+    display: inline-block;써서 메뉴에 마우스를 올리면 서브메뉴가 나오게 했다
+
+*/
+.menu{
+    background-color: #723535;
+    color: #f6f7ff;
+}
+.menu>ul{
+    display: flex;
+    max-width: 920px;
+    margin: 0 auto;
+}
+.menu >ul>li{
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+.menu >ul > li > a {
+    font-size: 15px;
+    font-weight: 700;
+
+    display: block;
+    padding: 10px 8px;
+}
+.menu >ul > li > a:hover{
+    color: rgb(185, 185, 185);
+    
+}
+.menu .submenu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    background-color: white;
+    color: #373738;
+    border:1px solid #cacaca;
+    border-top: none;
+}
+.menu .submenu a{
+    font-size: 15px;
+    padding: 12px;
+    font-weight: 500;
+}
+.menu .submenu a:hover{
+    font-weight: 800;
+}
+.menu>ul>li:hover .submenu{
+    display: inline-block;
+}
+/*
+    nav에 a로 메뉴를 묶어서 나중에 연결만하면 이동할수있다
+*/
+
+/* --------------본문----------------- */
+/*
+    7대3비율로 분할
+    대회 안내 에서 백그라운드에 background-image로 이미지를 추가
+    배너 아래 남는 공간은 border로 칸을 만들고 
+    space-between으로 양 옆으로 글과 더보기를 띄우고 
+    3의 비율을 가진 aside에는 공지사항과 광고사진을 넣고
+게시판에는 hover을 써서 마우스가 닿으면 색이 바뀌게 했고
+광고사진은 a태그를 써서 링크를 걸어두어 대한볼링협회로 가게 해두었습니다
+    */
+main{
+    display: flex;
+    gap:10px;
+    padding: 10px;
+
+}
+main section{
+    flex: 7;
+}
+main aside{
+    flex:3;
+}
+
+section>*{
+    margin-top: 20px;
+}
+.banner{
+    background-image: url('../im/banner.jpg');
+    padding: 40px 36px;
+    -webkit-text-stroke: 1px white;
+    color: black;
+    paint-order: stroke fill;
+    border-radius: 14px;
+    font-size: 30px;
+}
+
+
+.banner small{
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+.banner h2{
+    font-weight: 900;
+    line-height: 1.7;
+    margin: 8px 12px;
+}
+
+.banner p{
+    font-size: 12px;
+    opacity: 0.9;
+    font-size: 20px;
+    
+}
+
+.notice{
+    border: 1px solid #d0d3da;
+    border-radius: 12px;
+    padding:14px 18px;
+    font-size: 14px;
+    display: flex;
+    gap: 14px;
+
+    justify-content: space-between;
+}
+.notice .tag{
+    background-color: #e01414;
+    color: white;
+    padding :4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+
+}
+.notice .more{
+    color: #5a5a5a;
+    
+    font-weight: 700;
+    font-size: 12px;
+}
+aside > * {
+    margin-top: 20px;
+}
+.quick{
+    border: 1px solid #adadad;
+    border-radius: 12px;
+}
+.quick > h3{   
+    margin: 10px 10px;
+    font-size: 16px;
+}
+.quick>ul>li{
+    font-size: 13px;
+    text-decoration:underline;
+    margin: 8px;
+}
+.quick>ul>li:hover{
+    color: #6e6666;
+}
+.ad-card {
+  display: block;         
+  max-width: 320px;    
+  border-radius: 12px;     
+  border: 1px solid #e2ded7;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  background-size: cover; 
+  height: 200px;
+  background-image: url('../im/aa.jpg');
+}
+
+.cards{
+    display: grid;
+    gap:16px;
+
+    grid-template-columns: repeat(3,1fr);
+}
+.card{
+    border:1px solid #d0d3da;
+    padding :12px;
+    border-radius: 12px;
+    
+    min-width: 240px;
+}
+.card .body{
+    text-align: center;
+}
+.card:hover{
+    background-color: #ce957f;
+}
+.card .thumb {
+    background-image: url('../im/a.jpg');
+    height: 220px;
+    background-size: cover;
+    border: 1px solid #cacaca;
+}
+.card .thumb1 {
+    background-image: url('../im/b.jpg');
+    height: 220px;
+    background-size: cover;
+    border: 1px solid #cacaca;
+}
+.card .thumb2 {
+    background-image: url('../im/c.jpg');
+    height: 220px;
+    background-size: cover;
+    border: 1px solid #cacaca;
+}
+/*
+ad-card에는 display를 block으로 주어 제품을 늘릴때마다 제품을 밀어가면서 추가되게 해놨고
+이미지를 넣었을때 짤림현상은 background-size : cover;을 써서 사진이 짤리지 않게 해두었고
+.cards에 display: grid;를 추가해 grid-template-columns: repeat(3,1fr); 3개를 만들게 써두고
+카드에도 hover을 써서 마우스가 닿으면 색이 바뀌게 하여 좀더 식별하기 용이하게 해두었습니다
+
+*/
+
+/*------------------아래------------------*/
+
+/*
+    밑에칸에 padding으로 자리를 잡고 색을 더해 영역이 어디까지인지 확인하고
+    a태그들도 hover을 써서 마우스가 닿을시 효과을 주었고
+    p태그들은 서로 높이 간격을 주었습니다.
+    
+*/
+footer{
+    background-color: #723535;
+    color: #f6f7ff;
+    padding:32px 28px;
+}
+footer .footer-links{
+    display: flex;
+    gap: 18px;
+    margin-bottom: 16px;
+}
+
+fotter .footer-links a{
+    font-weight: 700;
+    font-size: 14px;
+    color: #c7c7c7;
+}
+
+footer .footer-links a:hover{
+    color: rgb(240, 189, 189);
+}
+footer p{
+    font-size: 13px;
+    line-height: 1.7;
+
+}
+footer .copy{
+    margin-top: 14px;
+    color: #946c6c;
+}
