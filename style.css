@@ -170,7 +170,7 @@ section>*{
     margin-top: 20px;
 }
 .banner{
-    background-image: url('../im/banner.jpg');
+    background-image: url('/im/banner.jpg');
     padding: 40px 36px;
     -webkit-text-stroke: 1px white;
     color: black;
@@ -251,7 +251,7 @@ aside > * {
   width: 100%;
   background-size: cover; 
   height: 200px;
-  background-image: url('../im/aa.jpg');
+  background-image: url('/im/aa.jpg');
 }
 
 .cards{
@@ -274,19 +274,19 @@ aside > * {
     background-color: #ce957f;
 }
 .card .thumb {
-    background-image: url('../im/a.jpg');
+    background-image: url('/im/a.jpg');
     height: 220px;
     background-size: cover;
     border: 1px solid #cacaca;
 }
 .card .thumb1 {
-    background-image: url('../im/b.jpg');
+    background-image: url('/im/b.jpg');
     height: 220px;
     background-size: cover;
     border: 1px solid #cacaca;
 }
 .card .thumb2 {
-    background-image: url('../im/c.jpg');
+    background-image: url('/im/c.jpg');
     height: 220px;
     background-size: cover;
     border: 1px solid #cacaca;
